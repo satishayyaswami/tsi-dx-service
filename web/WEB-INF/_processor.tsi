@@ -1,8 +1,2 @@
 # System API definitions
 /tsi/framework/apiuser=in.tsiconsulting.accelerator.framework.api.APIUser
-
-# Workflow
-/tsi/business/workflow=in.tsiconsulting.accelerator.business.workflow.WorkflowService
-
-# Scoring
-/tsi/solutions/scoring/basic=in.tsiconsulting.accelerator.business.scoring.BasicScorecard

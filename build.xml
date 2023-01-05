@@ -16,12 +16,12 @@
 		<javac destdir="build/classes" debug="true" srcdir="src">
 		   <classpath refid="compile.classpath"/>
 		</javac>
-		<jar destfile = "build/tsi_business_service.jar"
+		<jar destfile = "build/tsi_data_exchange_service.jar"
 		     basedir = "build/classes"/>
 	</target>
 	
 	<target name="war" depends="compile">
-		<war destfile="dist/tsi_business_service.war" webxml="web/WEB-INF/web.xml">
+		<war destfile="dist/tsi_data_exchange_service.war" webxml="web/WEB-INF/web.xml">
 			<fileset dir="web"/>
 			<lib dir="lib"/>
 			<classes dir="build/classes"/>
@@ -29,11 +29,25 @@
 		<delete dir="build" />
 	</target>
 			
-	<target name="run" description="Jetty runner" depends="war">
+	<target name="node1" description="DX Node1" depends="war">
 	     <exec executable="java">
 	       <arg line="-jar tools/jetty-runner-10.0.11.jar" />
-	       <arg line="--port 8080 dist/tsi_business_service.war" />
+	       <arg line="--port 9000 dist/tsi_data_exchange_service.war" />
 	     </exec>
+	</target>
+
+	<target name="node2" description="DX Node2" depends="war">
+		<exec executable="java">
+			<arg line="-jar tools/jetty-runner-10.0.11.jar" />
+			<arg line="--port 9010 dist/tsi_data_exchange_service.war" />
+		</exec>
+	</target>
+
+	<target name="node3" description="DX Node3" depends="war">
+		<exec executable="java">
+			<arg line="-jar tools/jetty-runner-10.0.11.jar" />
+			<arg line="--port 9020 dist/tsi_data_exchange_service.war" />
+		</exec>
 	</target>
 	
 	<target name="build" depends="war">		
