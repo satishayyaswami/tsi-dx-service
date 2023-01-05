@@ -1,2 +1,3 @@
 # Schema Definitions
 1=CREATE TABLE IF NOT EXISTS _sys_api_users (email VARCHAR(40) NOT NULL PRIMARY KEY,user_name VARCHAR(20) NOT NULL,api_key VARCHAR(50) NOT NULL, api_secret VARCHAR(50) NOT NULL,active SMALLINT NOT NULL DEFAULT 1,created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)
+2=CREATE TABLE IF NOT EXISTS network_participants_registry(participant_id INTEGER NOT NULL PRIMARY KEY,participant_name VARCHAR(40) NOT NULL,participant_business_desc VARCHAR(99),participant_type VARCHAR(20) NOT NULL,host_url VARCHAR(99) NOT NULL,public_key TEXT, created_at TIMESTAMP NOT NULL default current_timestamp, modified_at TIMESTAMP NOT NULL default current_timestamp)
