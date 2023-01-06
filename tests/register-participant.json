@@ -1,0 +1,9 @@
+{
+  "_func": "register_participant",
+  "participant_id":"esevnm",
+  "participant_name":"esevanam",
+  "participant_business_desc":"",
+  "participant_type":"HOST",
+  "host_url":"http://localhost:9000",
+  "public_key":""
+}

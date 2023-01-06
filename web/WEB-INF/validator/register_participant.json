@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "public_key": {
+      "type": "string"
+    },
+    "participant_type": {
+      "type": "string"
+    },
+    "host_url": {
+      "type": "string"
+    },
+    "participant_name": {
+      "type": "string"
+    },
+    "participant_id": {
+      "type": "string"
+    },
+    "_func": {
+      "type": "string"
+    },
+    "participant_business_desc": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "public_key",
+    "participant_type",
+    "host_url",
+    "participant_name",
+    "participant_id",
+    "_func",
+    "participant_business_desc"
+  ]
+}

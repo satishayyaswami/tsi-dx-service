@@ -1,2 +1,5 @@
 # System API definitions
 /tsi/framework/apiuser=in.tsiconsulting.accelerator.framework.api.APIUser
+
+# DX Service definitions
+/tsi/dx/participants=in.tsiconsulting.accelerator.dataexchange.NetworkParticipants
