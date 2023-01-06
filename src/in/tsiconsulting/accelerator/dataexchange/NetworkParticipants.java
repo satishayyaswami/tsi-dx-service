@@ -47,7 +47,11 @@ public class NetworkParticipants implements REST {
                     outputArr = getParticipants();
                 }
             }
-            OutputProcessor.send(res, HttpServletResponse.SC_OK, output);
+            if(outputArr != null){
+                OutputProcessor.send(res, HttpServletResponse.SC_OK, outputArr);
+            }else {
+                OutputProcessor.send(res, HttpServletResponse.SC_OK, output);
+            }
         }catch(Exception e){
             OutputProcessor.sendError(res,HttpServletResponse.SC_INTERNAL_SERVER_ERROR,"Unknown server error");
             e.printStackTrace();

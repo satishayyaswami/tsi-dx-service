@@ -9,3 +9,7 @@ curl -X POST -H "Content-Type: application/json" -d @C:\work\tsi-data-exchange-s
 # Register Participant
 curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTo0ODQyMTgwNjNlZTc5MGMwM2FiMjEyNWJkYmVlNmQ4Mg==" -d @C:\work\tsi-data-exchange-service\tests\register-participant.json http://localhost:9000/tsi/dx/participants
 
+# List Participants
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTo0ODQyMTgwNjNlZTc5MGMwM2FiMjEyNWJkYmVlNmQ4Mg==" -d @C:\work\tsi-data-exchange-service\tests\list-participants.json http://localhost:9000/tsi/dx/participants
+
+
