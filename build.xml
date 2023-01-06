@@ -29,25 +29,11 @@
 		<delete dir="build" />
 	</target>
 			
-	<target name="node1" description="DX Node1" depends="war">
+	<target name="dxservice" description="DX Service" depends="war">
 	     <exec executable="java">
 	       <arg line="-jar tools/jetty-runner-10.0.11.jar" />
 	       <arg line="--port 9000 dist/tsi_data_exchange_service.war" />
 	     </exec>
-	</target>
-
-	<target name="node2" description="DX Node2" depends="war">
-		<exec executable="java">
-			<arg line="-jar tools/jetty-runner-10.0.11.jar" />
-			<arg line="--port 9010 dist/tsi_data_exchange_service.war" />
-		</exec>
-	</target>
-
-	<target name="node3" description="DX Node3" depends="war">
-		<exec executable="java">
-			<arg line="-jar tools/jetty-runner-10.0.11.jar" />
-			<arg line="--port 9020 dist/tsi_data_exchange_service.war" />
-		</exec>
 	</target>
 	
 	<target name="build" depends="war">		
