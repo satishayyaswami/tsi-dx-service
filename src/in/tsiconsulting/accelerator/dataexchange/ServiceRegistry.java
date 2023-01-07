@@ -170,7 +170,7 @@ public class ServiceRegistry implements REST {
         DB.update(query);
     }
 
-    private JSONArray listServices() throws Exception{
+    protected JSONArray listServices() throws Exception{
         String sql = null;
         DBQuery query = null;
         JSONArray variables,grades = null;

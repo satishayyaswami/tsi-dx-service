@@ -130,7 +130,7 @@ public class NetworkParticipants implements REST {
         DB.update(query);
     }
 
-    private JSONArray getParticipants() throws Exception{
+    protected JSONArray getParticipants() throws Exception{
         String sql = null;
         DBQuery query = null;
         JSONArray variables,grades = null;

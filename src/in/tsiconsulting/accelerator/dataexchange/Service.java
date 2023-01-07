@@ -42,7 +42,7 @@ public class Service implements REST {
         String serviceId = (String) input.get("service_id");
         String versionNo = (String) input.get("version_no");
         JSONObject data = (JSONObject) input.get("data");
-        String status = "NEW";
+        String status = "PENDING";
 
         sql = "insert into request_queue (participant_id,service_id,version_no,request_data,status) values (?,?,?,?::json,?)";
         query = new DBQuery( sql);
