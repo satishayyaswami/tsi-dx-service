@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "version_no": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "eb_num": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "eb_num"
+      ]
+    },
+    "participant_id": {
+      "type": "string"
+    },
+    "service_id": {
+      "type": "string"
+    },
+    "_func": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "version_no",
+    "data",
+    "participant_id",
+    "service_id",
+    "_func"
+  ]
+}

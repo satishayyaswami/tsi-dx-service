@@ -24,3 +24,6 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmN
 # List Services
 curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\list-services.json http://localhost:9000/tsi/dx/registry
 
+# Call Service - EB Bill Request
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\service-eb-bill-fetch.json http://localhost:9000/tsi/dx/service
+
