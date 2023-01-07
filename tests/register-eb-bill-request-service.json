@@ -1,0 +1,66 @@
+{
+  "_func": "register_service",
+  "participant_id":"ebdept",
+  "service_id":"bilreq",
+  "version_no":"1.0",
+  "service_network":"USI",
+  "service_name":"EB Bill Request",
+  "service_uri":"/tsi/dx/service/eb/billreq",
+  "adapter_uri": "/tsi/dx/adapter",
+  "callback_url": "",
+  "service_desc": "Fetches Bill Amount based on EB Number",
+  "data_transfer_type": "JSON",
+  "request_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "eb_num": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "eb_num"
+    ]
+  },
+  "success_response_schema": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "bill_amount": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "bill_amount"
+  ]
+  },
+  "error_response_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "error_code": {
+        "type": "string"
+      },
+      "message": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "error_code",
+      "message"
+    ]
+  },
+  "sample_request":
+  {
+    "eb_num": "123456"
+  },
+  "success_sample_response":
+  {
+    "bill_amount": "1040"
+  },
+  "error_sample_response":
+  {
+    "error_code": "403",
+    "message": "Invalid EB Number"
+  }
+}

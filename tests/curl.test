@@ -4,12 +4,23 @@ TSI Data Exchange Service - v0.1
 # Create New API User
 curl -X POST -H "Content-Type: application/json" -d @C:\work\tsi-data-exchange-service\tests\create-api-user.json http://localhost:9000/tsi/framework/apiuser
 
-{"secret":"484218063ee790c03ab2125bdbee6d82","user":"a@c.com"}
+{"secret":"b3061b8163b876de87cf3ff1d9d76c57","user":"a@c.com"}
 
-# Register Participant
-curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTo0ODQyMTgwNjNlZTc5MGMwM2FiMjEyNWJkYmVlNmQ4Mg==" -d @C:\work\tsi-data-exchange-service\tests\register-participant.json http://localhost:9000/tsi/dx/participants
+# Register esevnm host
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\participant-esevnm.json http://localhost:9000/tsi/dx/participants
 
-# List Participants
-curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTo0ODQyMTgwNjNlZTc5MGMwM2FiMjEyNWJkYmVlNmQ4Mg==" -d @C:\work\tsi-data-exchange-service\tests\list-participants.json http://localhost:9000/tsi/dx/participants
+# Register ebdept node
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\participant-ebdept.json http://localhost:9000/tsi/dx/participants
 
+# Register regdpt node
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\participant-regdpt.json http://localhost:9000/tsi/dx/participants
+
+# List Network Participants
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\list-participants.json http://localhost:9000/tsi/dx/participants
+
+# Register Service - EB Bill Request
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\register-eb-bill-request-service.json http://localhost:9000/tsi/dx/registry
+
+# List Services
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\list-services.json http://localhost:9000/tsi/dx/registry
 

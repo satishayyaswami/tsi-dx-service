@@ -3,3 +3,4 @@
 
 # DX Service definitions
 /tsi/dx/participants=in.tsiconsulting.accelerator.dataexchange.NetworkParticipants
+/tsi/dx/registry=in.tsiconsulting.accelerator.dataexchange.ServiceRegistry

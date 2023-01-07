@@ -1,0 +1,233 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "version_no": {
+      "type": "string"
+    },
+    "data_transfer_type": {
+      "type": "string"
+    },
+    "error_sample_response": {
+      "type": "object",
+      "properties": {
+        "error_code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "error_code",
+        "message"
+      ]
+    },
+    "service_name": {
+      "type": "string"
+    },
+    "participant_id": {
+      "type": "string"
+    },
+    "request_schema": {
+      "type": "object",
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "properties": {
+          "type": "object",
+          "properties": {
+            "eb_num": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "eb_num"
+          ]
+        },
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "$schema",
+        "type",
+        "properties",
+        "required"
+      ]
+    },
+    "sample_request": {
+      "type": "object",
+      "properties": {
+        "eb_num": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "eb_num"
+      ]
+    },
+    "_func": {
+      "type": "string"
+    },
+    "callback_url": {
+      "type": "string"
+    },
+    "error_response_schema": {
+      "type": "object",
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "properties": {
+          "type": "object",
+          "properties": {
+            "error_code": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "message": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "error_code",
+            "message"
+          ]
+        },
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "$schema",
+        "type",
+        "properties",
+        "required"
+      ]
+    },
+    "service_network": {
+      "type": "string"
+    },
+    "adapter_uri": {
+      "type": "string"
+    },
+    "service_desc": {
+      "type": "string"
+    },
+    "service_uri": {
+      "type": "string"
+    },
+    "service_id": {
+      "type": "string"
+    },
+    "success_sample_response": {
+      "type": "object",
+      "properties": {
+        "bill_amount": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bill_amount"
+      ]
+    },
+    "success_response_schema": {
+      "type": "object",
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "properties": {
+          "type": "object",
+          "properties": {
+            "bill_amount": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "bill_amount"
+          ]
+        },
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "$schema",
+        "type",
+        "properties",
+        "required"
+      ]
+    }
+  },
+  "required": [
+    "version_no",
+    "data_transfer_type",
+    "error_sample_response",
+    "service_name",
+    "participant_id",
+    "request_schema",
+    "sample_request",
+    "_func",
+    "callback_url",
+    "error_response_schema",
+    "service_network",
+    "adapter_uri",
+    "service_desc",
+    "service_uri",
+    "service_id",
+    "success_sample_response",
+    "success_response_schema"
+  ]
+}

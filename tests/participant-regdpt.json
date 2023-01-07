@@ -1,0 +1,9 @@
+{
+  "_func": "register_participant",
+  "participant_id":"regdpt",
+  "participant_name":"Registration Department",
+  "participant_business_desc":"",
+  "participant_type":"PARTNER",
+  "host_url":"http://localhost:9020",
+  "public_key":""
+}

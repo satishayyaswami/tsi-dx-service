@@ -31,7 +31,6 @@ public class NetworkParticipants implements REST {
         JSONArray outputArr = null;
         JSONObject scoredef = null;
         String func = null;
-        JSONArray variables,grades = null;
         String participantId = null;
 
         try {
@@ -60,7 +59,7 @@ public class NetworkParticipants implements REST {
 
     private JSONObject registerParticipant(JSONObject input) throws Exception{
         JSONObject out = new JSONObject();
-        String participantId = (String) input.get("participant-id");
+        String participantId = (String) input.get("participant_id");
 
         if(participantexists(participantId)){
             // update
