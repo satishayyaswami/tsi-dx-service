@@ -149,11 +149,9 @@ public class ServiceRegistry implements REST {
         JSONObject successSampleResponse = (JSONObject) input.get("success_sample_response");
         JSONObject errorSampleResponse = (JSONObject) input.get("error_sample_response");
 
-        sql = "update service_registry set participant_id=?,service_id=?,version_no=?,service_network=?,service_name=?,service_uri=?,adapter_uri=?,callback_url=?,service_desc=?,data_transfer_type=?,request_schema=?::json,success_response_schema=?::json,error_response_schema=?::json,sample_request=?::json,success_sample_response=?::json,error_sample_response=?::json where participant_id=? and service_id=?";
+
+        sql = "update service_registry set service_network=?,service_name=?,service_uri=?,adapter_uri=?,callback_url=?,service_desc=?,data_transfer_type=?,request_schema=?::json,success_response_schema=?::json,error_response_schema=?::json,sample_request=?::json,success_sample_response=?::json,error_sample_response=?::json where participant_id=? and service_id=? and version_no=?";
         query = new DBQuery(sql);
-        query.setValue(Types.VARCHAR,participantId);
-        query.setValue(Types.VARCHAR,serviceId);
-        query.setValue(Types.VARCHAR,versionNo);
         query.setValue(Types.VARCHAR,serviceNetwork);
         query.setValue(Types.VARCHAR,serviceName);
         query.setValue(Types.VARCHAR,serviceUri);
@@ -167,6 +165,9 @@ public class ServiceRegistry implements REST {
         query.setValue(Types.VARCHAR,sampleRequest.toJSONString());
         query.setValue(Types.VARCHAR,successSampleResponse.toJSONString());
         query.setValue(Types.VARCHAR,errorSampleResponse.toJSONString());
+        query.setValue(Types.VARCHAR,participantId);
+        query.setValue(Types.VARCHAR,serviceId);
+        query.setValue(Types.VARCHAR,versionNo);
         DB.update(query);
     }
 

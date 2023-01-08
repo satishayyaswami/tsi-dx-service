@@ -23,7 +23,13 @@ public class QueueHandler implements ServletContextListener {
             .build();
 
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        try {
+        Processor obj = new Processor();
+        Thread thread = new Thread(obj);
+        thread.start();
+    }
+
+    public class Processor implements Runnable{
+        public void run() {
             JSONArray queue = null;
             Iterator<JSONObject> queueIt = null;
             JSONObject request = null;
@@ -39,10 +45,9 @@ public class QueueHandler implements ServletContextListener {
             String host = null;
             String uri = null;
             JSONObject data = null;
-
+            try {
             participants = new NetworkParticipants().getParticipants();
             registry = new ServiceRegistry().listServices();
-
             do {
                 queue = getQueue();
                 queueIt = queue.iterator();
@@ -57,18 +62,20 @@ public class QueueHandler implements ServletContextListener {
                     host = (String) participant.get("host_url");
                     uri = (String) service.get("adapter_uri");
                     data = (JSONObject) new JSONParser().parse((String)request.get("request_data"));
-                    System.out.println("Sending:"+host+"/"+uri+" "+participantId+" "+serviceId+" "+versionNo+" "+data);
+                    System.out.println("Sending:"+data);
                     response =  sendPost(host+"/"+uri,participantId,serviceId,versionNo,data);
-                    updateQueue(requestId, response);
-                    System.out.println("Received:"+response);
+                    if(response != null) {
+                        updateQueue(requestId, response);
+                        System.out.println("Received:" + response);
+                    }
                 }
-
                 try{
                     Thread.sleep(1000L);
                 }catch(Exception e){}
             }while(true);
-        }catch(Exception e){
-            e.printStackTrace();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }
 
@@ -80,7 +87,7 @@ public class QueueHandler implements ServletContextListener {
         query = new DBQuery(sql);
         query.setValue(Types.VARCHAR, response.toJSONString());
         query.setValue(Types.VARCHAR,"COMPLETED");
-        query.setValue(Types.INTEGER,new Long(requestId).intValue()+"");
+        query.setValue(Types.INTEGER,requestId+"");
         DB.update(query);
     }
 
@@ -98,10 +105,10 @@ public class QueueHandler implements ServletContextListener {
                 .build();
 
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-
-        resstring = response.body();
-        System.out.println(resstring);
-        res = (JSONObject) parser.parse(resstring);
+        if(response.statusCode() == 200) {
+            resstring = response.body();
+            res = (JSONObject) parser.parse(resstring);
+        }
         return res;
     }
 

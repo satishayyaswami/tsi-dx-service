@@ -15,7 +15,7 @@
 		<listener-class>in.tsiconsulting.accelerator.framework.DBSync</listener-class>
 	</listener>
 
-	<!--<listener>
+	<listener>
 		<listener-class>in.tsiconsulting.accelerator.dataexchange.QueueHandler</listener-class>
-	</listener>-->
+	</listener>
 </web-app>
