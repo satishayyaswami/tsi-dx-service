@@ -1,0 +1,101 @@
+{
+  "_func": "register_service",
+  "participant_id":"regdpt",
+  "service_id":"marreg",
+  "version_no":"1.0",
+  "service_network":"USI",
+  "service_name":"Marriage Reg Request",
+  "service_uri":"tsi/dx/service/reg/marriagereg",
+  "adapter_uri": "tsi/dx/adapter",
+  "callback_url": "",
+  "service_desc": "Apply for marriage certificate",
+  "data_transfer_type": "JSON",
+  "request_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "wife_name": {
+        "type": "string"
+      },
+      "wife_aadhaar": {
+        "type": "string"
+      },
+      "husband_aadhaar": {
+        "type": "string"
+      },
+      "husband_dob": {
+        "type": "string"
+      },
+      "marriage_location": {
+        "type": "string"
+      },
+      "husband_name": {
+        "type": "string"
+      },
+      "wife_dob": {
+        "type": "string"
+      },
+      "marriage_date": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "wife_name",
+      "wife_aadhaar",
+      "husband_aadhaar",
+      "husband_dob",
+      "marriage_location",
+      "husband_name",
+      "wife_dob",
+      "marriage_date"
+    ]
+  },
+  "success_response_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "tracker_id": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "tracker_id"
+    ]
+  },
+  "error_response_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "error_code": {
+        "type": "string"
+      },
+      "message": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "error_code",
+      "message"
+    ]
+  },
+  "sample_request":
+  {
+    "husband_name": "ABC",
+    "husband_aadhaar": "23424324323",
+    "husband_dob": "24/07/1990",
+    "wife_name": "DEF",
+    "wife_aadhaar": "98989889899",
+    "wife_dob": "14/09/1994",
+    "marriage_date": "01/01/2023",
+    "marriage_location": "Trivandrum"
+  },
+  "success_sample_response":
+  {
+    "tracker_id": "1541"
+  },
+  "error_sample_response":
+  {
+    "error_code": "403",
+    "message": "Invalid Aadhaar Number"
+  }
+}

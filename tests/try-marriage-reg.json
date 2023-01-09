@@ -1,0 +1,16 @@
+{
+  "_func": "service",
+  "participant_id":"regdpt",
+  "service_id":"marreg",
+  "version_no":"1.0",
+  "data": {
+    "husband_name": "ABC",
+    "husband_aadhaar": "23424324323",
+    "husband_dob": "24/07/1990",
+    "wife_name": "DEF",
+    "wife_aadhaar": "98989889899",
+    "wife_dob": "14/09/1994",
+    "marriage_date": "01/01/2023",
+    "marriage_location": "Trivandrum"
+  }
+}

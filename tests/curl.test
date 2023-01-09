@@ -21,17 +21,23 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmN
 # Register Service - EB Bill Request
 curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\register-eb-bill-request-service.json http://localhost:9000/tsi/dx/registry
 
-# List Services
-curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\list-services.json http://localhost:9000/tsi/dx/registry
-
-# Call Service - EB Bill Request
-curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\service-eb-bill-fetch.json http://localhost:9000/tsi/dx/service
-
 # Register Service - EB Payment Confirmation
 curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\register-eb-payment-confirm-service.json http://localhost:9000/tsi/dx/registry
 
-# Call Service - EB Payment Confirmation
-curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\service-eb-payment-confirmation.json http://localhost:9000/tsi/dx/service
+# Register Service - Marriage Registration
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\register-marriage-reg-service.json http://localhost:9000/tsi/dx/registry
 
+
+# List Services
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\list-services.json http://localhost:9000/tsi/dx/registry
+
+# Try - EB Bill Request
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\try-eb-bill-fetch.json http://localhost:9000/tsi/dx/service
+
+# Try - EB Payment Confirmation
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\try-eb-payment-confirmation.json http://localhost:9000/tsi/dx/service
+
+# Try - Marriage Registration Service
+curl -X POST -H "Content-Type: application/json" -H "Authorization:Basic YUBjLmNvbTpiMzA2MWI4MTYzYjg3NmRlODdjZjNmZjFkOWQ3NmM1Nw==" -d @C:\work\tsi-data-exchange-service\tests\try-marriage-reg.json http://localhost:9000/tsi/dx/service
 
 
