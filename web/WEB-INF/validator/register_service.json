@@ -39,23 +39,7 @@
           "type": "string"
         },
         "properties": {
-          "type": "object",
-          "properties": {
-            "eb_num": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "type"
-              ]
-            }
-          },
-          "required": [
-            "eb_num"
-          ]
+          "type": "object"
         },
         "required": {
           "type": "array",
@@ -72,15 +56,7 @@
       ]
     },
     "sample_request": {
-      "type": "object",
-      "properties": {
-        "eb_num": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "eb_num"
-      ]
+      "type": "object"
     },
     "_func": {
       "type": "string"
@@ -158,15 +134,7 @@
       "type": "string"
     },
     "success_sample_response": {
-      "type": "object",
-      "properties": {
-        "bill_amount": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "bill_amount"
-      ]
+      "type": "object"
     },
     "success_response_schema": {
       "type": "object",
@@ -178,23 +146,7 @@
           "type": "string"
         },
         "properties": {
-          "type": "object",
-          "properties": {
-            "bill_amount": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "type"
-              ]
-            }
-          },
-          "required": [
-            "bill_amount"
-          ]
+          "type": "object"
         },
         "required": {
           "type": "array",

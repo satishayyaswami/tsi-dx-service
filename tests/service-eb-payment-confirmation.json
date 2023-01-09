@@ -1,0 +1,11 @@
+{
+  "_func": "service",
+  "participant_id":"ebdept",
+  "service_id":"pmtcnf",
+  "version_no":"1.0",
+  "data": {
+    "eb_num": "123456",
+    "payment_amount": "1040",
+    "usi_payment_ref": "AX123123"
+  }
+}

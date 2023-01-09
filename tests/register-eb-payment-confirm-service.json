@@ -1,0 +1,81 @@
+{
+  "_func": "register_service",
+  "participant_id":"ebdept",
+  "service_id":"pmtcnf",
+  "version_no":"1.0",
+  "service_network":"USI",
+  "service_name":"EB Payment Confirmation",
+  "service_uri":"tsi/dx/service/eb/paymentconf",
+  "adapter_uri": "tsi/dx/adapter",
+  "callback_url": "",
+  "service_desc": "Issues receipt upon payment confirmation",
+  "data_transfer_type": "JSON",
+  "request_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "usi_payment_ref": {
+        "type": "string"
+      },
+      "payment_amount": {
+        "type": "string"
+      },
+      "eb_num": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "usi_payment_ref",
+      "payment_amount",
+      "eb_num"
+    ]
+  },
+  "success_response_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "receipt_pdf": {
+        "type": "string"
+      },
+      "receipt_no": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "receipt_pdf",
+      "receipt_no"
+    ]
+  },
+  "error_response_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "error_code": {
+        "type": "string"
+      },
+      "message": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "error_code",
+      "message"
+    ]
+  },
+  "sample_request":
+  {
+    "eb_num": "123456",
+    "payment_amount": "1040",
+    "usi_payment_ref": "AX123123"
+  },
+  "success_sample_response":
+  {
+    "receipt_no": "FG3456",
+    "receipt_pdf": "http://abc.com/receipts/FG3456.pdf"
+  },
+  "error_sample_response":
+  {
+    "error_code": "403",
+    "message": "Invalid EB Number"
+  }
+}

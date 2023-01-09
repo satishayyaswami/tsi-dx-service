@@ -6,15 +6,7 @@
       "type": "string"
     },
     "data": {
-      "type": "object",
-      "properties": {
-        "eb_num": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "eb_num"
-      ]
+      "type": "object"
     },
     "participant_id": {
       "type": "string"
