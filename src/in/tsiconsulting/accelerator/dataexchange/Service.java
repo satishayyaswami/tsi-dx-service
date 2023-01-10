@@ -26,6 +26,7 @@ public class Service implements REST {
 
         try {
             input = InputProcessor.getInput(req);
+            //System.out.println(input);
             output = serve(input);
             OutputProcessor.send(res, HttpServletResponse.SC_OK, output);
         }catch(Exception e){
@@ -68,6 +69,6 @@ public class Service implements REST {
 
     @Override
     public boolean validate(String s, HttpServletRequest req, HttpServletResponse res) {
-        return InputProcessor.validate( req, res);
+        return true;
     }
 }

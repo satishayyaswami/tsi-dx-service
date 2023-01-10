@@ -62,11 +62,11 @@ public class QueueHandler implements ServletContextListener {
                     host = (String) participant.get("host_url");
                     uri = (String) service.get("adapter_uri");
                     data = (JSONObject) new JSONParser().parse((String)request.get("request_data"));
-                    System.out.println("Sending:"+data);
-                    response =  sendPost(host+"/"+uri,participantId,serviceId,versionNo,data);
+                    System.out.println("RequestId: "+requestId+" Sending data to Adapter:"+data);
+                    response =  sendPost(host+"/"+uri,requestId+"",participantId,serviceId,versionNo,data);
                     if(response != null) {
                         updateQueue(requestId, response);
-                        System.out.println("Received:" + response);
+                        System.out.println("RequestId: "+requestId+" Received:" + response);
                     }
                 }
                 try{
@@ -91,7 +91,7 @@ public class QueueHandler implements ServletContextListener {
         DB.update(query);
     }
 
-    public JSONObject sendPost(String url,String participantId, String serviceId, String versionNo, JSONObject data) throws Exception {
+    public JSONObject sendPost(String url,String requestId, String participantId, String serviceId, String versionNo, JSONObject data) throws Exception {
         JSONObject res = null;
         String resstring = null;
         JSONParser parser = new JSONParser();
@@ -99,6 +99,7 @@ public class QueueHandler implements ServletContextListener {
                 .POST(HttpRequest.BodyPublishers.ofString(data.toString()))
                 .uri(URI.create(url))
                 .setHeader("Content-Type", "application/json")
+                .setHeader("request-id", requestId)
                 .setHeader("participant-id", participantId)
                 .setHeader("service-id",serviceId)
                 .setHeader("version-no",versionNo)

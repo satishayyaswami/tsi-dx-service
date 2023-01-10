@@ -201,6 +201,6 @@ public class ServiceRegistry implements REST {
 
     @Override
     public boolean validate(String s, HttpServletRequest req, HttpServletResponse res) {
-        return InputProcessor.validate( req, res);
+        return true;
     }
 }
