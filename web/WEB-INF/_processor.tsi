@@ -5,3 +5,6 @@
 /tsi/dx/participants=in.tsiconsulting.accelerator.dataexchange.NetworkParticipants
 /tsi/dx/registry=in.tsiconsulting.accelerator.dataexchange.ServiceRegistry
 /tsi/dx/service=in.tsiconsulting.accelerator.dataexchange.Service
+
+# DX Adapter
+/tsi/dx/adapter=in.tsiconsulting.accelerator.dataexchange.Adapter

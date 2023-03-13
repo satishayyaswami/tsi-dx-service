@@ -35,6 +35,20 @@
 	       <arg line="--port 9000 dist/tsi_data_exchange_service.war" />
 	     </exec>
 	</target>
+
+	<target name="eb" description="Jetty runner" depends="war">
+		<exec executable="java">
+			<arg line="-jar tools/jetty-runner-10.0.11.jar" />
+			<arg line="--port 9010 dist/tsi_data_exchange_service.war" />
+		</exec>
+	</target>
+
+	<target name="reg" description="Jetty runner" depends="war">
+		<exec executable="java">
+			<arg line="-jar tools/jetty-runner-10.0.11.jar" />
+			<arg line="--port 9020 dist/tsi_data_exchange_service.war" />
+		</exec>
+	</target>
 	
 	<target name="build" depends="war">		
 	</target>
